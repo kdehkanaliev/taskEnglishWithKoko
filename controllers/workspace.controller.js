@@ -38,7 +38,7 @@ async function inviteUser(req, res) {
 
   await sendEmail(email, link);
 
-  res.json({ message: "Invite sent" });
+  res.json({ message: "Invitelink sent to your email" });
 }
 
 let acceptInvite = async (req, res) => {
