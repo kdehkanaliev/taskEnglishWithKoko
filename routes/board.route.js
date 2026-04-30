@@ -7,7 +7,7 @@ const router = new Router();
 
 /**
  * @openapi
- * /workspaces/{workspaceId}/boards:
+ * /{workspaceId}/boards:
  *   post:
  *     summary: Create board in workspace
  *     tags:
@@ -46,7 +46,7 @@ router.post(
 
 /**
  * @openapi
- * /workspaces/{workspaceId}/boards:
+ * /{workspaceId}/boards:
  *   get:
  *     summary: Get all boards in workspace
  *     tags:
