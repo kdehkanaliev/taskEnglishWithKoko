@@ -36,6 +36,9 @@ node server.js
 - JWT Authentication
 - Swagger (swagger-ui-express + swagger-jsdoc)
 - dotenv
+- socket
+- nodemailer
+- bcrypt.js
 
 ---
 
