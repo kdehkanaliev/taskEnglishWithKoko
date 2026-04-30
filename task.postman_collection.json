@@ -1,0 +1,561 @@
+{
+  "info": {
+    "_postman_id": "eb9fcb13-43da-4c0f-b545-332b4d0cff5b",
+    "name": "task",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52031961",
+    "_collection_link": "https://go.postman.co/collection/52031961-eb9fcb13-43da-4c0f-b545-332b4d0cff5b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "userAuth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"simpleteam1303@gmail.com\",\n    \"password\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAll",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"kdehqonaliyev@gmail.com\",\n    \"password\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/getAll",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "getAll"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"kdehqonaliyev@gmail.com\",\n    \"password\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "workspace",
+      "item": [
+        {
+          "name": "CreateWorkspace",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NTM5OTYxfQ.47KLaqkDuHqQUVZc227q3A_TRzMcXY8C74foPNgCa60",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"English with Koko\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/workspaces",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "workspaces"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "invite User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NDg2MzE3fQ.UeohtXlTC9XAwgoOjyEtdH4iQqgnYbLVVYetYSEYJTc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"simpleteam1303@gmail.com\",\n    \"role\":\"member\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/workspaces/69f250b381b1b8fdf5c9ef58/invite",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "workspaces",
+                "69f250b381b1b8fdf5c9ef58",
+                "invite"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "accept-invite",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpbXBsZXRlYW0xMzAzQGdtYWlsLmNvbSIsImV4cGlyZXNJbiI6IjE1bSIsImlhdCI6MTc3NzQ4ODEwOH0.oFCUTvbnXTtmrUfkapd8Q9Fb7W7LON0qAAps2Z3Y_9c",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"simpleteam1303@gmail.com\",\n    \"role\":\"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/workspaces/accept-invite?token=167fbd748f1989b6523a6cf0009b128edea97c6457413606152f71dfb75b7c20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "workspaces",
+                "accept-invite"
+              ],
+              "query": [
+                {
+                  "key": "token",
+                  "value": "167fbd748f1989b6523a6cf0009b128edea97c6457413606152f71dfb75b7c20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getWorkspace",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NDg3NDQ5fQ.CP5oas42amA_4FwoWV-HDWqdn--IvfQDIXFQdCr3wmg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"simpleteam1303@gmail.com\",\n    \"role\":\"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/workspaces/69f250b381b1b8fdf5c9ef58",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "workspaces",
+                "69f250b381b1b8fdf5c9ef58"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteWorkspace",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NDg3NDQ5fQ.CP5oas42amA_4FwoWV-HDWqdn--IvfQDIXFQdCr3wmg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"simpleteam1303@gmail.com\",\n    \"role\":\"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/workspaces/69f250b381b1b8fdf5c9ef58",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "workspaces",
+                "69f250b381b1b8fdf5c9ef58"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "board",
+      "item": [
+        {
+          "name": "createBoard",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NTM5OTYxfQ.47KLaqkDuHqQUVZc227q3A_TRzMcXY8C74foPNgCa60",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"new Board\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/69f31b8f4cb3334b1eeb6888/boards",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "69f31b8f4cb3334b1eeb6888",
+                "boards"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getBoard",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NDg3NDQ5fQ.CP5oas42amA_4FwoWV-HDWqdn--IvfQDIXFQdCr3wmg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"simpleteam1303@gmail.com\",\n    \"role\":\"admin\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/69f31b8f4cb3334b1eeb6888/boards",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "69f31b8f4cb3334b1eeb6888",
+                "boards"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "task",
+      "item": [
+        {
+          "name": "create Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NTM5OTYxfQ.47KLaqkDuHqQUVZc227q3A_TRzMcXY8C74foPNgCa60",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\":\"English with Koko\",\n    \"description\":\"new Task\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/boards/69f31bfa4cb3334b1eeb688b/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "boards",
+                "69f31bfa4cb3334b1eeb688b",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getTasks",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NTM5OTYxfQ.47KLaqkDuHqQUVZc227q3A_TRzMcXY8C74foPNgCa60",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\":\"English with Koko\",\n    \"description\":\"new Task\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/boards/69f31bfa4cb3334b1eeb688b/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "boards",
+                "69f31bfa4cb3334b1eeb688b",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update Tasks",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NTM5OTYxfQ.47KLaqkDuHqQUVZc227q3A_TRzMcXY8C74foPNgCa60",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\":\"English with Koko\",\n    \"description\":\"new Task\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/tasks/69f31ec535f74701f7eda4ac",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "tasks",
+                "69f31ec535f74701f7eda4ac"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reorder",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtkZWhxb25hbGl5ZXZAZ21haWwuY29tIiwiZXhwaXJlc0luIjoiMTVtIiwiaWF0IjoxNzc3NTM5OTYxfQ.47KLaqkDuHqQUVZc227q3A_TRzMcXY8C74foPNgCa60",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\":\"English with Koko\",\n    \"description\":\"new Task\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/tasks/reorder/69f31ec535f74701f7eda4ac",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "tasks",
+                "reorder",
+                "69f31ec535f74701f7eda4ac"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
