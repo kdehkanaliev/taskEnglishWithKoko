@@ -44,12 +44,8 @@ async function inviteUser(req, res) {
 let acceptInvite = async (req, res) => {
   try {
     const { token } = req.query;
-    const userId = req.user.id;
-    const userEmail = req.user.email;
-    console.log(token);
 
     const invite = await Invite.findOne({ token });
-    console.log(invite);
 
     if (!invite) {
       return res.status(400).json({ message: "Invalid invite" });
@@ -63,27 +59,14 @@ let acceptInvite = async (req, res) => {
       return res.status(400).json({ message: "Already used" });
     }
 
-    // 🔐 email check
-    if (invite.email !== userEmail) {
-      return res.status(403).json({ message: "This invite is not for you" });
-    }
-
     const workspace = await Workspace.findById(invite.workspaceId);
 
     if (!workspace) {
       return res.status(404).json({ message: "Workspace not found" });
     }
 
-    const exists = workspace.members.find(
-      (m) => m.userId.toString() === userId,
-    );
-
-    if (exists) {
-      return res.status(400).json({ message: "Already member" });
-    }
-
     workspace.members.push({
-      userId,
+      userId: invite._id,
       role: invite.role,
     });
 

@@ -34,7 +34,7 @@ const router = express.Router();
  *       201:
  *         description: Workspace created successfully
  */
-router.post("/", authMiddleware, createWorkspace);
+router.post("/workspaces", authMiddleware, createWorkspace);
 
 /**
  * @openapi
@@ -47,7 +47,7 @@ router.post("/", authMiddleware, createWorkspace);
  *       200:
  *         description: Invite accepted successfully
  */
-router.get("/accept-invite", authMiddleware, acceptInvite);
+router.get("/workspaces/accept-invite", acceptInvite);
 
 /**
  * @openapi
@@ -67,7 +67,7 @@ router.get("/accept-invite", authMiddleware, acceptInvite);
  *         description: Workspace data
  */
 router.get(
-  "/:workspaceId",
+  "/workspaces/:workspaceId",
   authMiddleware,
   workspaceAccess(["owner", "admin", "member"]),
   getWorkspace,
@@ -91,7 +91,7 @@ router.get(
  *         description: Workspace deleted successfully
  */
 router.delete(
-  "/:workspaceId",
+  "/workspaces/:workspaceId",
   authMiddleware,
   workspaceAccess(["owner"]),
   deleteWorkspace,
@@ -130,7 +130,7 @@ router.delete(
  *         description: User invited successfully
  */
 router.post(
-  "/:workspaceId/invite",
+  "/workspaces/:workspaceId/invite",
   authMiddleware,
   workspaceAccess(["owner", "admin"]),
   inviteUser,
